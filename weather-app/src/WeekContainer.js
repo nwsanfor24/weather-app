@@ -21,12 +21,16 @@ class WeekContainer extends React.Component {
                 }, () => console.log(this.state))
             })
     }
-    
+
+    formatDayCards = () => {
+        return this.state.dailyData.map((reading, index) => <DayCard reading={reading} key={index} />)
+    }
+
     render() {
 
         return (
             <div>
-                <h1>Hello World!</h1>
+                {this.formatDayCards()}
             </div>
         )
     }
