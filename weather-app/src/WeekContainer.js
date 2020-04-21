@@ -4,7 +4,14 @@ import apiConfig from './apiKeys';
 class WeekContainer extends React.Component {
     state = {
         fullData: [],
-        dailyData: []
+        dailyData: [],
+        degreeType: "fahrenheit"
+    }
+
+    updateForecastDegree = event => {
+        this.setState({
+            degreeType: event.target.value
+        }, () => console.log(this.state))
     }
 
     componentDidMount = () => {
