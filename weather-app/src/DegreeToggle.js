@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DegreeToggle = props => {
+const DegreeToggle = ({degreeType, updateForecastDegree}) => {
     return (
         <React.Fragment>
             <div className="form-check form-check-inline">
@@ -10,6 +10,8 @@ const DegreeToggle = props => {
                 name="degree-type"
                 id="celsius"
                 value="metric"
+                checked={degreeType === "celsius"}
+                onChange={updateForecastDegree}
                 />
                 <label class="form-check-label" for="celsius">Celsius</label>
             </div>
@@ -19,7 +21,9 @@ const DegreeToggle = props => {
                 type="radio"
                 name="degree-type"
                 id="farenheit"
-                value="imperial"
+                value="fahrenheit"
+                checked={degreeType === "fahrenheit"}
+                onChange={updateForecastDegree}
                 />
                 <label class="form-check-label" for="farenheit">Farenheit</label>
             </div>
